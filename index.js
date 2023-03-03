@@ -1,10 +1,17 @@
-let express = require('express')
-var app = express();
-// Render static files
-app.use(express.static('public'));
+const express = require('express')
 
-app.get("/tvSearch", function (req, res) {
-   res.render("/tvSearch.html");
+const fs = require('fs')
+
+const app = express();
+
+app.set('view engine', 'ejs')
+
+app.use(express.static('public'))
+app.use(express.json())
+
+app.get('/tvSearch', function (req, res) {
+   res.render('tvSearch');
 })
-// Port website will run on
-app.listen(8080);
+
+
+app.listen(8000);
