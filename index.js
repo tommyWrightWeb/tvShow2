@@ -9,7 +9,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.json())
 
-app.get('/tvSearch', function (req, res) {
+app.get('/', function (req, res) {
    res.render('tvSearch');
 })
 
